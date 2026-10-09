@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "minimum_chrome_version": "116",
+  "name": "SIdekick — powered by Se\u00f1or Inteligente",
+  "version": "0.17.0",
+  "description": "A playful browser companion that transforms visible AI into S\u00cd, with optional mascot effects and live $S\u00ed market data.",
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "sidePanel",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.dexscreener.com/*",
+    "https://api.geckoterminal.com/*"
+  ],
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/mascot.png",
+        "assets/pinata-v2.png"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ]
+}

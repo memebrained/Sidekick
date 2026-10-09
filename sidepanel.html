@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="sidepanel.css">
+  <title>SIdekick — powered by Señor Inteligente</title>
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand"><img src="assets/mascot.png" alt="Señor Inteligente mascot"><div><strong>SIdekick</strong><span>Powered by Señor Inteligente</span></div></div>
+    <button id="panelSettingsButton" class="panel-settings-button" type="button" aria-label="Open settings" aria-expanded="false" aria-controls="settingsView">⚙</button>
+  </header>
+
+  <main id="marketView">
+    <section class="hero" aria-labelledby="tokenName">
+      <div class="identity"><h1 id="tokenName">Señor Inteligente <em>$Sí</em></h1><button id="copyAddress" class="hero-address" type="button" title="Copy full contract address"><span id="addressText"></span><strong id="copyLabel">COPY</strong></button></div>
+      <div class="value-row"><div><span class="eyebrow">MARKET CAP</span><div id="marketCap" class="price" aria-live="polite">—</div></div><span id="change" class="change neutral">— 24h</span></div>
+      <div id="periods" class="periods" role="group" aria-label="Price change timeframe">
+        <button class="period" type="button" data-period="m1" aria-pressed="false">1m</button>
+        <button class="period" type="button" data-period="m5" aria-pressed="false">5m</button>
+        <button class="period" type="button" data-period="h1" aria-pressed="false">1h</button>
+        <button class="period" type="button" data-period="h24" aria-pressed="true">24h</button>
+      </div>
+
+      <div class="chart" aria-label="Interactive $Sí candlestick chart"><div id="candleChart"></div><span id="chartLoading" class="chart-loading">Loading candles…</span></div>
+      <a class="chart-attribution" href="https://www.tradingview.com" target="_blank" rel="noopener noreferrer">Charts by TradingView</a>
+
+      <div class="stats">
+        <div><span>PRICE</span><strong id="price">—</strong></div>
+        <div><span>LIQUIDITY</span><strong id="liquidity">—</strong></div>
+        <div><span id="volumeLabel">24H VOLUME</span><strong id="volume">—</strong></div>
+        <div><span id="tradesLabel">24H TRADES</span><strong id="trades">—</strong></div>
+      </div>
+
+      <div class="flow"><div class="flow-copy"><span id="flowLabel">24H ORDER FLOW</span><strong id="flowText">—</strong></div><div class="flow-track"><i id="buyFlow"></i></div></div>
+    </section>
+
+    <section class="trade-section" aria-label="Trading platforms">
+      <span class="eyebrow">BUY</span>
+      <div id="platformList" class="platform-list"></div>
+      <p class="affiliate-disclosure">Some buttons use referral links. Any platform benefit varies by provider and should be verified before trading.</p>
+    </section>
+
+    <section class="about" aria-label="Credits and market data notice">
+      <div class="credits"><a href="https://x.com/memebrained" target="_blank" rel="noopener noreferrer"><img src="assets/majin.jpg" alt=""><span><small>Extension by</small><strong>@memebrained</strong></span></a><a href="https://x.com/wirelyss" target="_blank" rel="noopener noreferrer"><img src="assets/wirelyss.jpg" alt=""><span><small>Meme by</small><strong>@wirelyss</strong></span></a></div>
+      <p class="disclaimer">Market data is informational and may be delayed. Always verify the contract address and platform destination.</p>
+    </section>
+  </main>
+
+  <main id="settingsView" class="settings-view" hidden>
+    <section class="settings-card" aria-label="Extension settings">
+      <div class="settings-heading"><div><span class="eyebrow">PREFERENCES</span><h2>Extension settings</h2></div><strong id="panelLifetime">0</strong></div>
+      <label class="setting-row"><span>Text fiesta<small>Color and flip animation</small></span><span class="switch"><input id="panelTextEffects" type="checkbox"><i></i></span></label>
+      <label class="setting-row"><span>Mascot reactions<small>Bounce after each change</small></span><span class="switch"><input id="panelMascotReactions" type="checkbox"><i></i></span></label>
+      <label class="setting-row"><span>Hanging piñata<small>Tap to swing</small></span><span class="switch"><input id="panelPinataEnabled" type="checkbox"><i></i></span></label>
+      <label class="setting-row"><span>20× confetti<small>Celebrate every 20 changes</small></span><span class="switch"><input id="panelConfettiEnabled" type="checkbox"><i></i></span></label>
+      <label class="setting-row"><span>Light mode<small>Use the brighter color theme</small></span><span class="switch"><input id="panelLightMode" type="checkbox"><i></i></span></label>
+      <button id="panelMasterToggle" class="panel-master" type="button">Loading…</button>
+      <p class="settings-note">Settings apply instantly on active pages. Reload tabs that were open before SIdekick was installed or updated.<br>SIdekick version 0.16.0</p>
+    </section>
+  </main>
+
+  <footer><span><i></i> DexScreener + GeckoTerminal</span><span>Powered by Señor Inteligente</span><span id="updated">Updating…</span></footer>
+  <div id="status" class="sr-only" aria-live="polite"></div>
+  <script src="vendor/lightweight-charts/lightweight-charts.standalone.production.js"></script>
+  <script src="token-config.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
